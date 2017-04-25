@@ -5,6 +5,6 @@
 
 ## Usage:
 run command
-'''
+```
 python main.py
-'''
+```

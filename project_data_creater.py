@@ -6,13 +6,13 @@ from urlparse import urlparse
 from csvUtil import create_csv_file
 from dateUtil import get_week
 
-CONSTANTS_START_DATE_STR = '2017-02-26'
+CONSTANTS_START_DATE_STR = '2017-01-22'
 CONSTANTS_WP_LINKS_PATH = './data/wp_links.txt'
 CONSTANTS_CSV_FILE_NAME = './data/project_data.csv'
 CONSTANTS_WP_LINKS_TEMP_PATH = './data/wp_links_temp.txt'
 
 # print(get_week(CONSTANTS_START_DATE_STR, '2017-03-22'))
-with open(CONSTANTS_WP_LINKS_TEMP_PATH) as f:
+with open(CONSTANTS_WP_LINKS_PATH) as f:
    wp_links = f.readlines()
 
 all_blog_comment_records = [['target','source','time','week','comment']]

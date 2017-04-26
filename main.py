@@ -1,60 +1,55 @@
+import csv
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
-# A directed Graph
+
+# init param
+nodes = []
+edges = []
+
+# read node file
+with open('data/node_data.csv', 'r') as node_file:
+    next(node_file)
+    for row in csv.reader(node_file):
+    	nodes.append(row[0])
+node_file.close()
+
+# read edge file
+with open('data/edge_raw_data.csv', 'r') as edge_file:
+    next(edge_file)
+    for line in csv.reader(edge_file):
+    	pair = (line[0], line[1])
+    	edges.append(pair)
+edge_file.close()
+
+# SNA analysis
 di_G = nx.DiGraph()
-# add one node
-di_G.add_node(1)
-# add multiple nodes
-di_G.add_nodes_from ([2 ,3 ,4 ,5])
-# the node ' s label can be string
-di_G.add_node('Ted')
-# check exsiting nodes in the graph
-di_G.nodes()
-#------ test
-print "after adding nodes"
-nx.draw(di_G)
-plt.show()
-#------
-
-
-# remove nodes form the graph
-di_G.remove_node('Ted')
-# Check the nodes again
-di_G.nodes ()
-
-# add one edge (from node 1 to node 2)
-di_G.add_edge(1 ,2)
-# add multiple edges
-edge_list = [(1, 4), (2, 3), (2, 4), (2, 5)]
-di_G.add_edges_from(edge_list)
-# remove an edge
-di_G.remove_edge(2 ,5)
-# check the edges
-di_G.edges()
-
-# Add an edge with weight
-di_G.add_edge(3,4, weight=3)
-
-# Add an edge with nonexist node
-di_G.add_edge(3,6)
-di_G.edges()
+di_G.add_nodes_from(nodes)
 di_G.nodes()
 
-# remove node 6
-di_G.remove_node(6)
-di_G.edges()
+# print "All nodes added"
+# nx.draw(di_G)
+# plt.show()
+
+di_G.add_edges_from(edges)
 
 # Get Density for the graph
-nx.density(di_G)
+density = nx.density(di_G)
 # Compute the Indegree
 members_inDgree = di_G.in_degree()
 # Compute the Outdegree
 members_outDegree = di_G.out_degree()
+# Compute the Betweeness
+betweeness = nx.betweenness_centrality(di_G)
+# Compute the Closeness
+closeness = nx.closeness_centrality(di_G)
+
+print ' Density of the overall social network: ' , density
 print ' The indegrees for all nodes are: ' , members_inDgree
 print ' The outdegree for all nodes are: ' , members_outDegree
+print ' The Betweeness for all nodes are: ' , betweeness
+print ' The Closeness for all nodes are: ' , closeness
 
-# (Optional) Draw the graph using matplotlib
-nx.draw(di_G)
-plt.show()
-
+# print "All edges added"
+# nx.draw(di_G)
+# plt.show()

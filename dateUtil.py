@@ -14,9 +14,9 @@ def get_day_diff(starting_date_str, ending_date_str):
 	else:
 		char = ending_date_str.split(' ')
 		if len(char[0]) > 3:
-			ending_date = datetime.strptime(ending_date_str[:ending_date_str.index('at')-1], '%B %d, %Y').date()
+			ending_date = datetime.datetime.strptime(ending_date_str[:ending_date_str.index('at')-1], '%B %d, %Y').date()
 		else: 
-			ending_date = datetime.strptime(ending_date_str[:ending_date_str.index('at')-1], '%b %d, %Y').date()
+			ending_date = datetime.datetime.strptime(ending_date_str[:ending_date_str.index('at')-1], '%b %d, %Y').date()
 	# ending_date = datetime.datetime.strptime(ending_date_str, '%Y-%m-%d').date()
 	delta = starting_date - ending_date
 	day_diff = abs(delta.days)
@@ -24,6 +24,20 @@ def get_day_diff(starting_date_str, ending_date_str):
 	# print ending_date
 	# print day_diff
 	return abs(day_diff)
+
+def get_time(time_str):
+	# special handling of different format of date
+	length = len(time_str.split(' '))
+	if length == 1:
+		time_str = time_str[:10]
+		ending_date = datetime.datetime.strptime(time_str, '%Y-%m-%d').date()
+	else:
+		char = time_str.split(' ')
+		if len(char[0]) > 3:
+			ending_date = datetime.datetime.strptime(time_str[:time_str.index('at')-1], '%B %d, %Y').date()
+		else: 
+			ending_date = datetime.datetime.strptime(time_str[:time_str.index('at')-1], '%b %d, %Y').date()
+	return ending_date
 
 
 # todo: negative value

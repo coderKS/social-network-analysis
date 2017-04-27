@@ -64,4 +64,4 @@ def start(links_file):
 	create_csv_file(CONSTANTS_CSV_FILE_NAME, all_blog_comment_records)
 
 # Program starts here
-start(CONSTANTS_WP_LINKS_PATH)
+start(CONSTANTS_WP_LINKS_TEMP_PATH)

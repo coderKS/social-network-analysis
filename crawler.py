@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from pyquery import PyQuery as pq
-from dateUtil import get_week
+from dateUtil import get_week, get_time
 import re
 import urllib
 import urllib2
@@ -61,9 +61,10 @@ def getCommentRecord(blog_url, post_url, starting_date):
 		time = time.encode('utf-8')
 		comment = getCommentContent(item)
 
-		time = time[0:10]
+		# time = time[0:10]
 		comment = filter(lambda x: x in printable, comment) # filter non-ascii char
 		week = get_week(starting_date, time)
+		time = get_time(time)
 		comment_abbreviation = comment[0:20] + "......" + comment[-20:]
 		print "\t\t source=[%s], time=[%s], week=[%s], comment=[%s]" % (source_url, time, week, comment_abbreviation)
 

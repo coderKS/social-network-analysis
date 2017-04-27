@@ -64,7 +64,8 @@ def getCommentRecord(blog_url, post_url, starting_date):
 		time = time[0:10]
 		comment = filter(lambda x: x in printable, comment) # filter non-ascii char
 		week = get_week(starting_date, time)
-		print "\t\t source=[%s], time=[%s], week=[%s], comment=[%s]" % (source_url, time, week, comment)
+		comment_abbreviation = comment[0:20] + "......" + comment[-20:]
+		print "\t\t source=[%s], time=[%s], week=[%s], comment=[%s]" % (source_url, time, week, comment_abbreviation)
 
 		record = []
 		record.append(blog_url)

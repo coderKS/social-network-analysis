@@ -30,24 +30,27 @@ def create_url_mapping():
 	if links == None:
 		return None
 	for link in links:
+		link = link.strip()
 		link = parse_url(link)
 		url_mapping[link] = url_mapping_id
 		url_mapping_id += 1 # increment key
 	return url_mapping
 
 def get_id(link, link_map):
+	link = link.strip()
+	link = parse_url(link)
 	if link in link_map:
 		return link_map[link]
 	else:
 		return "id not found"
 
 def start(links_file):
-	url_mapping = create_url_mapping(links_file)
+	url_mapping = create_url_mapping()
 	wp_links = read_links(links_file)
 	all_blog_comment_records = [['target','source','time','week','comment','target_id','source_id']]
 	url_without_comments = []
 	for wp_link in wp_links:
-		target = parse_url(wp_link)
+		target = wp_link.strip()
 		print "#########################################"
 		print "# taget blog = [%s] " % target
 		print "#########################################"
@@ -67,4 +70,4 @@ def start(links_file):
 	print url_without_comments
 
 # Program starts here
-start(CONSTANTS_WP_LINKS_PATH)
+start(CONSTANTS_WP_LINKS_TEMP_PATH)

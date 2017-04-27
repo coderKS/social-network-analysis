@@ -1,19 +1,19 @@
-http://ierg3320tsepikkei.wordpress.com/
+http://ierg3320tsepikkei.wordpress.com/blog/
 http://ierg3320yhy.wordpress.com/
 http://ierg3320tina.wordpress.com/
-http://lanselott.wordpress.com/
+https://lanselott.wordpress.com/網誌/
 http://evilghostbb.wordpress.com/
 http://yuxinliu1995.wordpress.com/
-http://http237blog.wordpress.com/
+# http://https237blog.wordpress.com/ post url needs special handling
 http://kelwin3320.wordpress.com/
 http://kristawwn.wordpress.com/
 http://ierg3320blog.wordpress.com/
 http://wangyingling.wordpress.com/
 http://ronald3320.wordpress.com/
 http://iecuhkeduhk1155062181.wordpress.com/
-http://ierg3320jinny.wordpress.com/
+https://ierg3320jinny.wordpress.com/
 http://ierg3320aplus.wordpress.com/
-# http://ierg3320site.wordpress.com/
+http://ierg3320site.wordpress.com/
 http://ierg3320hcm.wordpress.com/
 http://ierg3320ywy.wordpress.com/
 http://ierg3320swk.wordpress.com/
@@ -21,10 +21,10 @@ http://edmondsk64.wordpress.com/
 http://ierg3320web.wordpress.com/
 http://ierg3320wongcheongfai.wordpress.com/
 http://ierg3320tonykang.wordpress.com/
-http://fanjunbo.wordpress.com/
+https://fanjunbo.wordpress.com/
 http://tommyierg3320.wordpress.com/
-http://ierg33202017.wordpress.com/
-http://meinym.wordpress.com/
+https://ierg33202017.wordpress.com/
+http://meinym.wordpress.com/blog/
 http://boscoyam3820.wordpress.com/
 http://boscoyam3820.wordpress.com/
 http://boscoyam3820.wordpress.com/
@@ -36,11 +36,11 @@ http://amazinghoran.wordpress.com/
 http://ierg3320788.wordpress.com/
 http://linrui050.wordpress.com/
 http://ierg3320122.wordpress.com/
-http://wangzhc.wordpress.com/
+http://wangzhc.wordpress.com/博客/
 http://kelvin0218xierg3320.wordpress.com/
 http://1155047507blog.wordpress.com/
 http://hystblog.wordpress.com/
-http://richard3320.wordpress.com/
+http://richard3320.wordpress.com/網誌/
 http://ierg3320sze.wordpress.com/
 http://stanleylaublog.wordpress.com/
 http://lansonleung.wordpress.com/
@@ -51,11 +51,11 @@ http://nelsonching.wordpress.com/
 http://jedtsui.wordpress.com/
 http://ierg3320l.wordpress.com/
 http://pokeishere.wordpress.com/
-http://ierg3320student.wordpress.com/
+https://ierg3320student.wordpress.com/
 http://ierg3320101.wordpress.com/
 http://lokin511.wordpress.com/
 http://ierg3320grant.wordpress.com/
-http://iergfelix.wordpress.com/
+http://iergfelix.wordpress.com/blog/
 http://terryhungierg3320.wordpress.com/
 http://ierg3320520.wordpress.com/
 http://1155063316blog.wordpress.com/
@@ -63,7 +63,7 @@ http://ierg3320wkc.wordpress.com/
 http://ierg3320991.wordpress.com/
 http://kenyiublog.wordpress.com/
 http://mosessmng.wordpress.com/
-http://chungsuilun.wordpress.com/
+https://chungsuilun.wordpress.com/
 http://luiyan95.wordpress.com/
 http://ivanpoonblog.wordpress.com/
 http://ierg3320layblog.wordpress.com/
@@ -71,7 +71,7 @@ http://jetto1155049661.wordpress.com/
 http://ierg3320cuhk.wordpress.com/
 http://gloriacww.wordpress.com/
 http://atot0907.wordpress.com/
-http://journey1001.wordpress.com/���x/
+http://journey1001.wordpress.com/網誌/
 http://fxxxmylife.wordpress.com/
 http://1155048001blog.wordpress.com/
 http://ierg3320lhy.wordpress.com/
@@ -79,3 +79,4 @@ http://ierg3320520.wordpress.com/
 http://1155051425blog.wordpress.com/blog?iframe=true&theme_preview=true
 http://ierg3320lhy.wordpress.com/
 http://anguslin3320.wordpress.com/
+https://ronald3320.wordpress.com/

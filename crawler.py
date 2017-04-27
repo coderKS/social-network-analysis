@@ -25,8 +25,8 @@ def cleanhtml(raw_html):
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
 
-def getCommentContent(item):
-	data = item(".comment-content p")
+def getCommentContent(dom_item):
+	data = dom_item(".comment-content p")
 	comment = []
 	printable = set(string.printable)
 
@@ -35,12 +35,21 @@ def getCommentContent(item):
 		# filter non-ascii char
 		comment.append(filter(lambda x: x in printable, comment_block))
 
+	if (len(comment) == 0):
+		data = dom_item(".comment-body p")
+		for item in data.items():
+			comment_block = item.html().encode('utf-8')
+			# filter non-ascii char
+			comment.append(filter(lambda x: x in printable, comment_block))
+
 	comment = ''.join(comment)
 	comment = cleanhtml(comment)
 	return comment
 
 def getCommentRecord(blog_url, post_url, starting_date):
+	post_url = post_url.strip()
 	print "%s" % post_url
+
 	d = pq(url=post_url)
 	data = d(".comment")
 	printable = set(string.printable)
@@ -49,6 +58,7 @@ def getCommentRecord(blog_url, post_url, starting_date):
 	for item in data.items():
 		source_url = item('a.url').attr("href")
 		if(source_url == None):
+			print "source_url not found"
 			continue
 
 		source_url = source_url.encode('utf-8')
@@ -56,8 +66,12 @@ def getCommentRecord(blog_url, post_url, starting_date):
 		if(time == None):
 			time = item('.comment-header p a').html()
 			if(time == None):
-				continue
+				time = item('.comment-meta a').html().strip()
+				if(time == None):
+					print "time not found"
+					continue
 
+		print time
 		time = time.encode('utf-8')
 		comment = getCommentContent(item)
 
@@ -66,7 +80,7 @@ def getCommentRecord(blog_url, post_url, starting_date):
 		week = get_week(starting_date, time)
 		time = get_time(time)
 		comment_abbreviation = comment[0:20] + "......" + comment[-20:]
-		print "\t\t source=[%s], time=[%s], week=[%s], comment=[%s]" % (source_url, time, week, comment_abbreviation)
+		print "\t\t target=[%s], source=[%s], time=[%s], week=[%s], comment=[%s]" % (blog_url, source_url, time, week, comment_abbreviation)
 
 		record = []
 		record.append(blog_url)

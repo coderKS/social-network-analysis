@@ -23,10 +23,10 @@ def parse_url(url):
 	formatted_link = '{uri.scheme}://{uri.netloc}'.format(uri=parsed_link)
 	return formatted_link
 
-def create_url_mapping(file):
+def create_url_mapping():
 	url_mapping = dict()
 	url_mapping_id = 1
-	links = read_links(file)
+	links = read_links(CONSTANTS_WP_LINKS_PATH)
 	if links == None:
 		return None
 	for link in links:
@@ -45,7 +45,7 @@ def start(links_file):
 	url_mapping = create_url_mapping(links_file)
 	wp_links = read_links(links_file)
 	all_blog_comment_records = [['target','source','time','week','comment','target_id','source_id']]
-	
+	url_without_comments = []
 	for wp_link in wp_links:
 		target = parse_url(wp_link)
 		print "#########################################"
@@ -54,6 +54,7 @@ def start(links_file):
 		blog_comment_records = getBlogCommentRecord(target, CONSTANTS_START_DATE_STR)
 		if(len(blog_comment_records) == 0):
 			print "!!! Cannot find any comment !!!\n"
+			url_without_comments.append(wp_link)
 		for record in blog_comment_records:
 			target = record[0]
 			source = record[1]
@@ -62,6 +63,8 @@ def start(links_file):
 			all_blog_comment_records.append(record)
 
 	create_csv_file(CONSTANTS_CSV_FILE_NAME, all_blog_comment_records)
+	print "url_without_comments:"
+	print url_without_comments
 
 # Program starts here
-start(CONSTANTS_WP_LINKS_TEMP_PATH)
+start(CONSTANTS_WP_LINKS_PATH)

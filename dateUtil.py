@@ -8,7 +8,7 @@ def get_day_diff(starting_date_str, ending_date_str):
 	# special handling of different format of date
 	length = len(ending_date_str.split(' '))
 
-	if length == 1:
+	if length <= 3:
 		ending_date_str = ending_date_str[:10]
 		ending_date = datetime.datetime.strptime(ending_date_str, '%Y-%m-%d').date()
 	else:

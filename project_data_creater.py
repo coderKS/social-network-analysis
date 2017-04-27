@@ -70,4 +70,4 @@ def start(links_file):
 	print url_without_comments
 
 # Program starts here
-start(CONSTANTS_WP_LINKS_TEMP_PATH)
+start(CONSTANTS_WP_LINKS_PATH)

@@ -27,10 +27,6 @@ di_G = nx.DiGraph()
 di_G.add_nodes_from(nodes)
 di_G.nodes()
 
-# print "All nodes added"
-# nx.draw(di_G)
-# plt.show()
-
 di_G.add_edges_from(edges)
 
 # Get Density for the graph
@@ -45,11 +41,10 @@ betweeness = nx.betweenness_centrality(di_G)
 closeness = nx.closeness_centrality(di_G)
 
 print ' Density of the overall social network: ' , density
-print ' The indegrees for all nodes are: ' , members_inDgree
-print ' The outdegree for all nodes are: ' , members_outDegree
-print ' The Betweeness for all nodes are: ' , betweeness
-print ' The Closeness for all nodes are: ' , closeness
 
-# print "All edges added"
-# nx.draw(di_G)
-# plt.show()
+# individual analysis example
+print ' The indegrees of XXX: ' , members_inDgree['10']
+print ' The outdegree of XXX: ' , members_outDegree['10']
+print ' The Betweeness of XXX: ' , betweeness['10']
+print ' The Closeness for of XXX: ' , closeness['10']
+

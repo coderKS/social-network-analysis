@@ -4,7 +4,7 @@ http://ierg3320tina.wordpress.com/
 https://lanselott.wordpress.com/網誌/
 http://evilghostbb.wordpress.com/
 http://yuxinliu1995.wordpress.com/
-# http://https237blog.wordpress.com/ post url needs special handling
+http://https237blog.wordpress.com/
 http://kelwin3320.wordpress.com/
 http://kristawwn.wordpress.com/
 http://ierg3320blog.wordpress.com/

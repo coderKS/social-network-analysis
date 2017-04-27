@@ -13,9 +13,15 @@ def getPost(url):
 	d = pq(url=url)
 	data = d("a")
 	posts_url = [] 
+	post_dict = dict()
 	for item in data.items():
 		if item.attr('rel') == 'bookmark':
-			posts_url.append(item.attr('href').encode('utf-8'))
+			post_url = item.attr('href').encode('utf-8').strip()
+			if post_url in post_dict:
+				continue
+			post_dict[post_url] = 1
+			posts_url.append(post_url)
+
 
 	posts_url = list(set(posts_url)) # remove duplicates
 	return posts_url
@@ -54,14 +60,17 @@ def getCommentRecord(blog_url, post_url, starting_date):
 	data = d(".comment")
 	printable = set(string.printable)
 	comment_records = []
+	comment_dict = dict()
 
 	for item in data.items():
 		source_url = item('a.url').attr("href")
 		if(source_url == None):
-			print "source_url not found"
-			continue
-
+			source_url = item('comment-author img').attr('src')
+			if(source_url == None):
+				print "source_url not found"
+				continue
 		source_url = source_url.encode('utf-8')
+
 		time = item('time').attr('datetime')
 		if(time == None):
 			time = item('.comment-header p a').html()
@@ -71,9 +80,14 @@ def getCommentRecord(blog_url, post_url, starting_date):
 					print "time not found"
 					continue
 
-		print time
+		# print time
 		time = time.encode('utf-8')
-		comment = getCommentContent(item)
+		comment = getCommentContent(item).strip()
+		# print comment
+		if(comment in comment_dict):
+			print "continued!"
+			continue
+		comment_dict[comment] = 1
 
 		# time = time[0:10]
 		comment = filter(lambda x: x in printable, comment) # filter non-ascii char

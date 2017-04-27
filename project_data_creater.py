@@ -20,7 +20,7 @@ def read_links(file):
 
 def parse_url(url):
 	parsed_link = urlparse(url)
-	formatted_link = '{uri.scheme}://{uri.netloc}'.format(uri=parsed_link)
+	formatted_link = '{uri.netloc}'.format(uri=parsed_link)
 	return formatted_link
 
 def create_url_mapping():

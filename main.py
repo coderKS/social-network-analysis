@@ -15,7 +15,7 @@ with open('data/node_data.csv', 'r') as node_file:
 node_file.close()
 
 # read edge file
-with open('data/edge_raw_data.csv', 'r') as edge_file:
+with open('data/project_data_final.csv', 'r') as edge_file:
     next(edge_file)
     for line in csv.reader(edge_file):
     	pair = (line[0], line[1])
@@ -42,9 +42,31 @@ closeness = nx.closeness_centrality(di_G)
 
 print ' Density of the overall social network: ' , density
 
-# individual analysis example
-print ' The indegrees of XXX: ' , members_inDgree['10']
-print ' The outdegree of XXX: ' , members_outDegree['10']
-print ' The Betweeness of XXX: ' , betweeness['10']
-print ' The Closeness for of XXX: ' , closeness['10']
+#individual analysis
+print '##########################################################'
+print ' The indegrees of Wong Ka Chun Anthony: ' , members_inDgree['16']
+print ' The outdegree of Wong Ka Chun Anthony: ' , members_outDegree['16']
+print ' The Betweeness of Wong Ka Chun Anthony: ' , betweeness['16']
+print ' The Closeness of Wong Ka Chun Anthony: ' , closeness['16']
+
+print '##########################################################'
+print ' The indegrees of Law Yue Hei: ' , members_inDgree['15']
+print ' The outdegree of Law Yue Hei: ' , members_outDegree['15']
+print ' The Betweeness of Law Yue Hei: ' , betweeness['15']
+print ' The Closeness of Law Yue Hei: ' , closeness['15']
+
+print '##########################################################'
+
+print ' The indegrees of Tse Ching Hin: ' , members_inDgree['40']
+print ' The outdegree of Tse Ching Hin: ' , members_outDegree['40']
+print ' The Betweeness of Tse Ching Hin: ' , betweeness['40']
+print ' The Closeness of Tse Ching Hin: ' , closeness['40']
+
+
+print '##########################################################'
+
+print ' The indegrees of Wong Kam Shing: ' , members_inDgree['47']
+print ' The outdegree of Wong Kam Shing: ' , members_outDegree['47']
+print ' The Betweeness of Wong Kam Shing: ' , betweeness['47']
+print ' The Closeness of Wong Kam Shing: ' , closeness['47']
 
